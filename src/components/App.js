@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import products from '../data/products.json';
+import data from '../data/products.json';
 
 import Header from './Header';
+import ProductList from './ProductList';
 
 const App = () => {
-  const [product, setProduct] = useState(products);
+  const [products, setProducts] = useState(data);
 
   return (
     <>
       <Header></Header>
+      <ProductList products={products}></ProductList>
     </>
   );
 };

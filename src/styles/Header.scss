@@ -1,6 +1,8 @@
+@import './Variables.scss';
+
 .header {
     height: 60px;
-    background-color: rgb(255, 92, 92);
+    background-color: $brand-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,6 +10,6 @@
     &__title {
         font-size: 1.125rem;
         font-weight: 400;
-        color: #fff;
+        color: $white;
     }
 }

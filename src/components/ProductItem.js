@@ -42,7 +42,7 @@ function ProductItem(props) {
         <p className="item__coverage">
           <span className={`item__coverage--span ${coverageClass}`}>
             {coverage}
-          </span>{' '}
+          </span>
           wh coverage
         </p>
       </div>

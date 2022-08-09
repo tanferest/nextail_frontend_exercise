@@ -5,6 +5,11 @@ function ProductList(props) {
   const handleClick = (ev) => {
     props.handleBtn(ev.currentTarget.parentElement.id);
   };
+
+  const handleClickConfirm = (ev) => {
+    props.confirm(ev.target.value);
+  }
+
   const product = props.products.map((item, index) => {
     return (
       <li className="list__item" id={item.code} key={item.code}>
@@ -20,8 +25,8 @@ function ProductList(props) {
       <div className={`confirmation ${props.hidden}`}>
         <div className="confirmation__wrapper">
           <p>Are you sure you want to mark this product as complete?</p>
-          <input className="confirmation__btn" type="submit" value="Yes" />
-          <input className="confirmation__btn" type="submit" value="No" />
+          <input className="confirmation__btn" type="submit" value="Yes" onClick={handleClickConfirm}/>
+          <input className="confirmation__btn" type="submit" value="No" onClick={handleClickConfirm} />
         </div>
       </div>
       <ul className="list">{product}</ul>

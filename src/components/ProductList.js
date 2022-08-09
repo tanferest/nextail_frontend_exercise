@@ -10,7 +10,9 @@ function ProductList(props) {
     props.confirm(ev.target.value);
   }
 
-  const product = props.products.map((item, index) => {
+  const product = props.products
+  .sort((a,b) => a.sales_ranking > b.sales_ranking ? 1 : -1)
+  .map((item, index) => {
     return (
       <li className="list__item" id={item.code} key={item.code}>
         <button className="btn" onClick={handleClick}>

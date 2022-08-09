@@ -10,9 +10,9 @@ const App = () => {
   const [products, setProducts] = useState(ls.get('products', []));
   const [hidden, setHidden] = useState('hidden');
   const [newProducts, setNewProducts] = useState([]);
-  
+
   useEffect(() => {
-    if(products.length === 0) {
+    if (products.length === 0) {
       setProducts(data);
     }
   }, [products]);
@@ -22,22 +22,26 @@ const App = () => {
   }, [products]);
 
   const handleConfirm = (value) => {
-    if(value === "Yes") {
+    if (value === 'Yes') {
       setProducts(newProducts);
     }
     setHidden('hidden');
-  }
+  };
 
   const handleBtn = (id) => {
-      setNewProducts(products.filter((item) => item.code !== parseInt(id)));
+    setNewProducts(products.filter((item) => item.code !== parseInt(id)));
     setHidden('');
-  }
-
+  };
 
   return (
     <>
       <Header></Header>
-      <ProductList products={products} handleBtn={handleBtn} hidden={hidden} confirm={handleConfirm}></ProductList>
+      <ProductList
+        products={products}
+        handleBtn={handleBtn}
+        hidden={hidden}
+        confirm={handleConfirm}
+      ></ProductList>
     </>
   );
 };

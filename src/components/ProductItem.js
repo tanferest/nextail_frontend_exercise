@@ -8,10 +8,10 @@ function ProductItem(props) {
   let coverageClass = '';
   if (percnt < 50) {
     coverage = 'very low';
-    coverageClass = 'red';
+    coverageClass = 'is-low-coverage';
   } else {
     coverage = 'good';
-    coverageClass = 'green';
+    coverageClass = 'is-good-coverage';
   }
 
   return (
